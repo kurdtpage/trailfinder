@@ -1,0 +1,57 @@
+body{
+	background-image: url("/tfbg.jpg");
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#main{
+	opacity: 0.75;
+}
+nav{
+	opacity: 1;
+}
+.justify{
+	text-align: justify;
+}
+#sidebar{
+}
+.map{
+	height: 35vh;
+	width: 98%;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	margin: 10px;
+	margin-bottom: 0px;
+	display: inline-block;
+	resize: both;
+  overflow: hidden;
+}
+#topomap{
+}
+#googlemap{
+	width:100%;
+	height:100%;
+}
+#rainradar{
+	width: 190%;
+	height: 210%;
+	zoom: 0.5;
+	-ms-zoom: 0.5;
+	-moz-transform: scale(0.5);
+	-moz-transform-origin: 0 0;
+	-o-transform: scale(0.5);
+	-o-transform-origin: 0 0;
+	-webkit-transform: scale(0.5);
+	-webkit-transform-origin: 0 0;
+	overflow:hidden;
+}
+#downloads{
+	opacity: 0.75;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#images{
+	width:100%;
+	height:30vh;
+}
