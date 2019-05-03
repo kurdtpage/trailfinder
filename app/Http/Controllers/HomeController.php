@@ -11,6 +11,7 @@ class HomeController extends Controller
   public function index(){
 		$tracks = Track::all(); //get all tracks
 		$categorys = Category::all(); //get all categorys
+		
 		return view('home', [
 			'tracks' => $tracks
 			,'categorys' => $categorys

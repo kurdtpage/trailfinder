@@ -13,12 +13,12 @@ class CreateMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('media', function (Blueprint $table) {
+        Schema::create('medias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('filename');
             
             $table->unsignedInteger('track_id');
-            $table->foreign('track_id')->references('id')->on('track');
+            $table->foreign('track_id')->references('id')->on('tracks');
 
             $table->unsignedInteger('created_id');
             $table->foreign('created_id')->references('id')->on('users');
@@ -36,6 +36,6 @@ class CreateMediaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('medias');
     }
 }

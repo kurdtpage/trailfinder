@@ -17,10 +17,10 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->string('text');
             
-            $table->unsignedInteger('parent_id');
-            $table->foreign('parent_id')->references('id')->on('comments');
+            $table->unsignedInteger('comment_id');
+            $table->foreign('comment_id')->references('id')->on('comments');
             $table->unsignedInteger('track_id');
-            $table->foreign('track_id')->references('id')->on('track');
+            $table->foreign('track_id')->references('id')->on('tracks');
 
             $table->unsignedInteger('created_id');
             $table->foreign('created_id')->references('id')->on('users');

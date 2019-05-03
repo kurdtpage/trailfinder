@@ -24,7 +24,8 @@ class TrackController extends Controller
 	
 	public function view($trackId){
 		$track = Track::findOrFail($trackId);
-		//echo $track->title;
+		//$categorys = CategoryController::view()->categorys;
+
 		return view('track', [
 			'track' => $track
 		]);

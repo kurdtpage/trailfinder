@@ -19,9 +19,9 @@ class CreateFeaturesTable extends Migration
             $table->string('url');
             
             $table->unsignedInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('type');
+            $table->foreign('type_id')->references('id')->on('types');
             $table->unsignedInteger('track_id');
-            $table->foreign('track_id')->references('id')->on('track');
+            $table->foreign('track_id')->references('id')->on('tracks');
 
             $table->unsignedInteger('created_id');
             $table->foreign('created_id')->references('id')->on('users');

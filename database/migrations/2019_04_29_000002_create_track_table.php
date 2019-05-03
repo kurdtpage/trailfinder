@@ -13,7 +13,7 @@ class CreateTrackTable extends Migration
      */
     public function up()
     {
-        Schema::create('track', function(Blueprint $table){
+        Schema::create('tracks', function(Blueprint $table){
             $table->increments('id');
             $table->string('text');
             $table->text('description');
@@ -24,7 +24,7 @@ class CreateTrackTable extends Migration
             $table->decimal('gps_finish_y', 13, 10);
 
             $table->unsignedInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('category_id')->references('id')->on('categorys');
 
             $table->unsignedInteger('created_id');
             $table->foreign('created_id')->references('id')->on('users');
@@ -42,6 +42,6 @@ class CreateTrackTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('track');
+        Schema::dropIfExists('tracks');
     }
 }

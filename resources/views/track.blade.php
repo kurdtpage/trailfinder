@@ -1,6 +1,24 @@
 @extends('master')
-@section('title', $track->text)
+@section('title', $track->text.' - Trailfinder')
 @section('content')
+
+
+<!-- /*
+	id
+	text
+	description
+	directions
+	gps_start_x
+	gps_start_y
+	gps_finish_x
+	gps_finish_y
+	category_id
+	created_id
+	modified_id
+	created_at
+	updated_at
+*/ -->
+
 	<script>
 		var start  = [-44.9637503315,169.1284877810];
 		var finish = [-44.9796500014,169.1843040002];
@@ -16,6 +34,12 @@
 						<li class="breadcrumb-item active" aria-current="page">{{ $track->text }}</li>
 					</ol>
 				</nav>
+
+				<p><pre>
+					<?php 
+						print_r($track);
+					?>
+				</pre></p>
 
 				<h1>{{ $track->text }}</h1>
 				
