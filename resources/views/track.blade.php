@@ -4,25 +4,26 @@
 
 
 <!-- /*
-	id
-	text
-	description
-	directions
-	gps_start_x
-	gps_start_y
-	gps_finish_x
-	gps_finish_y
-	category_id
-	created_id
-	modified_id
-	created_at
-	updated_at
+	$track->id
+	$track->text
+	$track->description
+	$track->directions
+	$track->gps_start_x
+	$track->gps_start_y
+	$track->gps_finish_x
+	$track->gps_finish_y
+	$track->category_id
+	$track->created_id
+	$track->modified_id
+	$track->created_at
+	$track->updated_at
 */ -->
 
 	<script>
 		var start  = [-44.9637503315,169.1284877810];
 		var finish = [-44.9796500014,169.1843040002];
 	</script>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-8 bg-white" id="main">
@@ -30,16 +31,10 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
 						<li class="breadcrumb-item"><a href="#">Tracks</a></li>
-						<li class="breadcrumb-item"><a href="#">{{ $track->category }}</a></li>
+						<li class="breadcrumb-item"><a href="#"><?php $category = $track->category[0]; ?>{{ $category->text }}</a></li>
 						<li class="breadcrumb-item active" aria-current="page">{{ $track->text }}</li>
 					</ol>
 				</nav>
-
-				<p><pre>
-					<?php 
-						print_r($track);
-					?>
-				</pre></p>
 
 				<h1>{{ $track->text }}</h1>
 				
@@ -48,12 +43,12 @@
 
 				<h3>Technical info</h3>
 				<ul id="technical">
-					<li>Start coordinates: <span id="start_lat">123</span>,<span id="start_lng">456</span></li>
-					<li>Finish coordinates: <span id="finish_lat">123</span>,<span id="finish_lng">456</span></li>
-					<li>Length: 10km</li>
-					<li>Start altitude: 100m</li>
-					<li>Finish altitude: 200m</li>
-					<li>Elevation gain: 100m</li>
+					<li>Start coordinates: <span id="start_lat">{{ $track->gps_start_x }}</span>, <span id="start_lng">{{ $track->gps_start_y }}</span></li>
+					<li>Finish coordinates: <span id="finish_lat">{{ $track->gps_finish_x }}</span>, <span id="finish_lng">{{ $track->gps_finish_y }}</span></li>
+					<li>Length: 0km</li>
+					<li>Start altitude: 0m</li>
+					<li>Finish altitude: 0m</li>
+					<li>Elevation gain: 0m</li>
 					<li>Dogs allowed: Yes</li>
 				</ul>
 							
